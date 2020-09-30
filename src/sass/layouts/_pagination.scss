@@ -1,0 +1,56 @@
+.pagination {
+  @include size(100%, 50px);
+  @include flex(row, center, center);
+  margin-top: 15px;
+  position: relative;
+  padding: 0;
+
+  &-btn {
+    @include size(40px);
+    margin: 0;
+    padding: 0;
+    background: none;
+    color: $color-primary-dark;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+  }
+
+  &-item-list {
+    @include flex(row, center, center);
+    font-size: $font-sm;
+  }
+
+  &-control-btn {
+    position: relative;
+  }
+
+
+  &-icon {
+    position: absolute;
+    top: 35%;
+    left: 37.5%;
+    color: $color-primary-normal;
+
+    svg {
+      stroke: $color-primary-normal;
+    }
+  }
+}
+
+.current {
+  background-color: $color-fade-2;
+}
+
+.disabled svg{
+  stroke: $color-gray;
+}
+
+
+.border-right {
+  @include customBorder(1px, solid, #eee9e8, right); 
+}
+
+.radius-full {
+  border-radius: 5px;
+}

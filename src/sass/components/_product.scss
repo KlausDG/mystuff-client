@@ -1,0 +1,56 @@
+.product {
+  margin: 15px;
+  width: 400px;
+  max-height: 160px;
+  display: flex;
+  flex-shrink: 0 !important;
+
+  @include media(phone) {
+    width: 100%;
+    margin: 15px 0 15px 0;
+  }
+
+  &-image {
+    @include size(160px);
+    @extend %background-image-normalize;
+    margin-right: 15px;
+  }
+
+  &-info {
+    @include flex(column, space-between);
+  }
+
+  &-author {
+    font-size: $font-xs;
+    font-weight: $semibold;
+    color: $color-fade;
+
+      @include media(phone) {
+        font-weight: 400;
+      }
+  }
+
+  &-title {
+    margin-top: -5px;
+    font-family: $font-alice;
+    font-size: $font-lg;
+    color: $color-primary-dark;
+
+    @include media(phone) {
+      margin-top: 0;
+      line-height: 1;
+      font-size: $font-md;
+    }
+  }
+
+  &-category {
+    font-weight: $semibold;
+    font-size: scut-rem(12px);
+  }
+
+  &-price {
+    margin: 5px 0 5px 0;
+    font-size: scut-rem(18px);
+    font-weight: bolder;
+  }
+}

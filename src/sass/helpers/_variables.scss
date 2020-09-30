@@ -1,0 +1,32 @@
+//Colors
+$color-primary-light: #222266;
+$color-primary-normal: #443355;
+$color-primary-dark: #001133;
+$color-fade: #C2857A;
+$color-fade-2: hsla(9, 37%, 62%, 0.1);
+$color-contrast: #FF7518;
+
+$color-white: #FAF8F8;
+$color-gray: #E2DADA;
+
+
+//Typography
+$font-alice: Alice, serif;
+$font-montserrat: Montserrat, Sans-serif;
+
+$semibold: 600;
+
+$font-xs: scut-rem(10px);
+$font-sm: scut-rem(12px);
+$font-md: scut-rem(16px);
+$font-lg: scut-rem(18px);
+$font-xl: scut-rem(28px);
+$font-xxl: scut-rem(42px);
+
+$container-size: 1420px;
+$header-height: 100px;
+
+
+//Resposive
+$md-breakpoint: 1450px;
+$sm-breakpoint: 767.98px;

@@ -1,0 +1,17 @@
+.product-btn {
+    @include size(150px, 35px);
+    border-radius: 50px;
+    border: none;
+    background-color: $color-gray;
+    font-weight: bolder;
+    letter-spacing: 0.5px;
+    color: $color-primary-normal;
+    font-size: $font-xs;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:active {
+        background-color: $color-contrast;
+        color: white;
+    }
+}

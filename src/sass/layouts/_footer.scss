@@ -1,0 +1,12 @@
+.footer {
+  @include flex(row, center, center);
+  margin-top: 15px;
+  height: 50px;
+  background-color: $color-primary-normal;
+
+  &-text {
+    color: $color-white;
+    font-size: $font-md;
+    font-weight: bold;
+  }
+}

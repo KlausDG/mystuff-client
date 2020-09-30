@@ -1,0 +1,26 @@
+.subheader {
+    background-color: $color-contrast;
+    height: calc(#{$header-height / 2});
+    @include flex(row, center, center);
+
+    @include media(tablet) {
+        height: calc(#{$header-height / 2} * 0.8);
+    }
+
+    @include media(phone) {
+        height: calc(#{$header-height / 2} * 0.8);
+    }
+
+    &-text {
+        color: $color-white;
+        font-size: $font-lg;
+
+        @include media(tablet) {
+            font-size: $font-sm;
+        }
+
+        @include media(phone) {
+            font-size: $font-sm;
+        }
+    }
+}

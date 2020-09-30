@@ -1,0 +1,75 @@
+@mixin size($width, $height: null) {
+  @if $height {
+    height: $height;
+  } @else {
+    height: $width;
+  }
+
+  width: $width;
+}
+
+@mixin flex($direction, $justify: null, $align: null) {
+  display: flex;
+  flex-direction: $direction;
+
+  @if $justify {
+    justify-content: $justify;
+  }
+
+  @if $align {
+    align-items: $align;
+  }
+}
+
+@mixin center($axis: "both") {
+  position: absolute;
+  @if $axis == "y" {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  @if $axis == "x" {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  @if $axis == "both" {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+@mixin customBorder($size, $style, $color, $axis: null) {
+  $border: "border";
+
+  @if $axis != null {
+    $border: "border-" + $axis
+  }
+
+  #{$border}: $size $style $color;
+}
+
+@mixin media($media) {
+  @if $media==phone {
+    @media only screen and (max-width: $sm_breakpoint) {
+      @content;
+    }
+  }
+
+  @else if $media==tablet {
+    @media only screen and (min-width: $sm_breakpoint + 1) and (max-width: $md_breakpoint) {
+      @content;
+    }
+  }
+}

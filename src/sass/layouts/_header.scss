@@ -1,0 +1,94 @@
+.header {
+  @include flex(row, space-between);
+  max-width: $container-size;
+  margin: auto;
+  height: $header-height;
+
+  @include media(tablet) {
+    padding: 0 20px;
+    height: calc(#{$header-height * 0.8});
+  }
+
+  @include media(phone) {
+    flex-direction: column;
+    justify-content: start;
+    padding: 0;
+  }
+  
+  &-logo {
+    margin: auto 0;
+    font-family: $font-alice;
+    font-size: $font-xxl;
+    color: $color-primary-dark;
+    cursor: pointer;
+    
+    @include media(tablet) {
+      font-size: $font-xl;
+    }
+    
+    @include media(phone) {
+      margin: 0;
+      text-align: center;
+    }
+  }
+}
+
+.nav {
+  @include media(phone) {
+    height: 100%;
+  }
+  
+  &-list {
+    @include flex(row, null, center);
+    height: 100%;
+
+    @include media(phone) {
+      justify-content: space-evenly;
+      width: 100%;
+    }
+
+    &-item {
+      font-size: $font-md;
+      font-weight: $semibold;
+      margin-left: 30px;
+      color: $color-primary-light;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      @include media(tablet) {
+        margin-top: 14px;
+        font-size: $font-sm;
+      }
+      
+      @include media(phone) {
+        font-size: $font-xs;
+        margin: 0;
+      }
+
+      &:hover {
+        color: $color-contrast !important;
+
+        &:not(.selected) {
+          transform: translateY(-20%);
+        }
+      }
+    }
+  }
+}
+
+.selected::after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  background: $color-primary-light;
+  margin-top: -2px;
+
+  @include media(tablet) {
+    margin-top: 0px;
+  }
+
+  @include media(phone) {
+    height: 1px;
+  }
+}
