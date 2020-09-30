@@ -25,7 +25,6 @@ export default {
         { title: "Livros", value: "Livro" },
         { title: "HQs", value: "HQ" },
         { title: "Mangás", value: "Mangá" },
-        { title: "Jogos", value: "Jogo" },
         { title: "Outros", value: "Outro" }
       ],
       category: {
