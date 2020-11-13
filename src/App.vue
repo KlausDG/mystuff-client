@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <main-header @change-category="newCategory" @reset="reset" :filter="filter"></main-header>
+    <main-header
+      @change-category="newCategory"
+      @reset="reset"
+      :filter="filter"
+    ></main-header>
     <sub-header></sub-header>
     <filter-menu
       @items-per-page="itemsPerPage"
@@ -14,23 +18,32 @@
 </template>
 
 <script>
+import { responsive } from '@/mixins/responsive';
+
 export default {
+  mixins: [responsive],
   data() {
     return {
       filter: {
         header: {
-          category: { title: "Todos", value: "Todos" },
+          category: { title: 'Todos', value: 'Todos' },
           quantity: 0,
-          found: 0
+          found: 0,
         },
         options: {
-          sort: "a-z",
+          sort: 'a-z',
           itemsPerPage: 12,
-          search: "",
-          currentPage: 1
-        }
-      }
+          search: '',
+          currentPage: 1,
+        },
+      },
     };
+  },
+
+  created() {
+    if (this.phone) {
+      this.filter.options.itemsPerPage = 10000;
+    }
   },
 
   methods: {
@@ -53,22 +66,22 @@ export default {
     reset() {
       this.filter = {
         header: {
-          category: { title: "Todos", value: "Todos" },
+          category: { title: 'Todos', value: 'Todos' },
           quantity: 0,
-          found: 0
+          found: 0,
         },
         options: {
-          sort: "a-z",
-          itemsPerPage: "12",
-          search: "",
-          currentPage: 1
-        }
+          sort: 'a-z',
+          itemsPerPage: '12',
+          search: '',
+          currentPage: 1,
+        },
       };
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="scss">
-  @import "./sass/main.scss";
+@import './sass/main.scss';
 </style>

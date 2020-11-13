@@ -1,7 +1,9 @@
 .subheader {
+    @include flex(row, center, center);
     background-color: $color-contrast;
     height: calc(#{$header-height / 2});
-    @include flex(row, center, center);
+    overflow: hidden;
+    position: relative;
 
     @include media(tablet) {
         height: calc(#{$header-height / 2} * 0.8);
@@ -12,8 +14,12 @@
     }
 
     &-text {
+        width: 100%;
+        position: absolute;
         color: $color-white;
         font-size: $font-lg;
+        transform: translateX(100%);
+        animation: subheader 15s linear infinite;
 
         @include media(tablet) {
             font-size: $font-sm;
@@ -22,5 +28,43 @@
         @include media(phone) {
             font-size: $font-sm;
         }
+    }
+}
+
+@-moz-keyframes subheader {
+    0% {
+        -moz-transform: translateX(100%);
+    }
+
+    100% {
+        -moz-transform: translateX(-100%);
+    }
+}
+
+@-webkit-keyframes subheader {
+    0% {
+        -webkit-transform: translateX(100%);
+    }
+
+    100% {
+        -webkit-transform: translateX(-100%);
+    }
+}
+
+@keyframes subheader {
+    0% {
+        -moz-transform: translateX(100%);
+        /* Firefox bug fix */
+        -webkit-transform: translateX(100%);
+        /* Firefox bug fix */
+        transform: translateX(100%);
+    }
+
+    100% {
+        -moz-transform: translateX(-100%);
+        /* Firefox bug fix */
+        -webkit-transform: translateX(-100%);
+        /* Firefox bug fix */
+        transform: translateX(-100%);
     }
 }

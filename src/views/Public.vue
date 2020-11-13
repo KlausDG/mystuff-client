@@ -10,7 +10,7 @@
         v-bind:item="item"
       />
     </div>
-    <div class="pagination">
+    <div class="pagination" v-if="!phone">
       <button
         class="pagination-btn pagination-control-btn"
         :class="{ disabled: currentPage === 1 }"
@@ -54,8 +54,10 @@
 <script>
 import Axios from "axios";
 import EventBus from "@/event-bus";
+import { responsive } from "@/mixins/responsive";
 
 export default {
+  mixins: [responsive],
   data() {
     return {
       items: [],

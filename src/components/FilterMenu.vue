@@ -25,7 +25,7 @@
             <option value="desc">Maior Preço</option>
           </select>
         </li>
-        <li class="filter-item">
+        <li class="filter-item" v-if="!phone">
           <p class="filter-item-label">Exibir</p>
           <select
             class="filter-item-dropdown filter-item-input"
@@ -58,8 +58,10 @@
 
 <script>
 import EventBus from '@/event-bus';
+import { responsive } from "@/mixins/responsive";
 
 export default {
+  mixins: [responsive],
   data() {
     return {
       displayQtdValues: [12, 24, 48, 96, 192, 10000]

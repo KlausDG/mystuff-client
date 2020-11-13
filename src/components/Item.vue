@@ -1,6 +1,5 @@
 <template>
   <div class="product">
-    <!-- <img :src="item.image" :alt="'imagem do produto de nome ' + item.title" class="product-image" /> -->
     <div class="product-image-container">
       <div
         :style="{ 'background-image': 'url(' + require(`@/assets/img/${item.image}.jpg`) + ')' }"

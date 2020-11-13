@@ -2,7 +2,6 @@ import Vue from "vue";
 import App from "./App.vue";
 import axios from "axios";
 import router from "./router";
-// import paginate from "vuejs-paginate";
 
 Vue.config.productionTip = false;
 
@@ -19,8 +18,6 @@ Vue.component("icon-base", require("./components/IconBase.vue").default);
 Vue.component("search-icon",require("./components/Icons/Search-Icon.vue").default);
 Vue.component("previous-icon",require("./components/Icons/Previous-Icon.vue").default);
 Vue.component("next-icon",require("./components/Icons/Next-Icon.vue").default);
-
-// Vue.component("paginate", paginate);
 
 new Vue({
   router,

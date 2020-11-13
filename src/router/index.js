@@ -12,20 +12,6 @@ const routes = [
     component: Public,
     props: true
   },
-//   {
-//     path: '/admin',
-//     name: 'admin',
-//     component: Admin,
-//     beforeEnter: (to, from, next) => {
-//       if (!store.getters['auth/authenticated']) {
-//         return next({
-//           name: 'games'
-//         })
-//       }
-
-//       next()
-//     }
-//   },
 ]
 
 const router = new VueRouter({
